@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import { localEnv } from "./local-env.mjs";
-import { knowledge, conciergePrompt } from "../src/lib/spa.ts";
+import { conciergePrompt } from "../src/lib/spa.ts";
 
 const env = localEnv();
 const headers = { "xi-api-key": env.ELEVENLABS_API_KEY, "Content-Type": "application/json" };
