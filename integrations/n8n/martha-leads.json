@@ -1,0 +1,11 @@
+{
+  "name": "Martha's Healing Touch — verified callback leads",
+  "active": false,
+  "nodes": [
+    {"id":"lead-webhook","name":"Verified website lead","type":"n8n-nodes-base.webhook","typeVersion":2,"position":[0,0],"parameters":{"httpMethod":"POST","path":"martha-lead","authentication":"headerAuth","responseMode":"responseNode","options":{}},"credentials":{"httpHeaderAuth":{"id":"marthaWebhookAuth01","name":"Martha website webhook"}}},
+    {"id":"validate-lead","name":"Accept confirmed lead only","type":"n8n-nodes-base.code","typeVersion":2,"position":[250,0],"parameters":{"jsCode":"const lead=$json.body; if(!lead?.confirmed||typeof lead.name!=='string'||typeof lead.phone!=='string'||!['en','es'].includes(lead.language)||lead.name.trim().length<2||lead.name.length>80||!^[+()\\s\\d-]{7,22}$/.test(lead.phone)||typeof lead.source!=='string') throw new Error('Invalid confirmed lead'); return [{json:{name:lead.name.trim().replace(/\\s+/g,' '),phone:lead.phone.trim(),interest:typeof lead.interest==='string'?lead.interest.trim().slice(0,220):null,language:lead.language,source:lead.source,receivedAt:new Date().toISOString()}}];"}},
+    {"id":"lead-response","name":"Confirm receipt","type":"n8n-nodes-base.respondToWebhook","typeVersion":1.4,"position":[500,0],"parameters":{"respondWith":"json","responseBody":"={{ { accepted: true } }}","options":{"responseCode":200}}}
+  ],
+  "connections":{"Verified website lead":{"main":[[{"node":"Accept confirmed lead only","type":"main","index":0}]]},"Accept confirmed lead only":{"main":[[{"node":"Confirm receipt","type":"main","index":0}]]}},
+  "settings":{"executionOrder":"v1","saveDataSuccessExecution":"none","saveDataErrorExecution":"none","saveExecutionProgress":false,"executionTimeout":30}
+}

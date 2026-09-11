@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000">
+  <rect width="800" height="1000" fill="#d4ddd0"/>
+  <rect x="200" y="120" width="400" height="400" rx="200" fill="#a8b5a0"/>
+  <rect x="150" y="560" width="500" height="320" rx="24" fill="#8fa088"/>
+  <text x="400" y="920" text-anchor="middle" fill="#2c2c2c" font-family="Georgia, serif" font-size="28">Martha Martinez  foto profesional</text>
+</svg>

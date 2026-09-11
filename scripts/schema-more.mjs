@@ -1,0 +1,1 @@
+import fs from 'node:fs';const d=JSON.parse(fs.readFileSync('docs/elevenlabs-schema.json'));for(const k of ['BuiltInTools-Input','KnowledgeBaseLocator','TTSConversationalConfig-Input','AuthSettings','GuardrailsV1-Input'])console.log(k,JSON.stringify(d.components.schemas[k]).slice(0,6500));

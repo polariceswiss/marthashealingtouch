@@ -1,0 +1,3 @@
+import fs from 'node:fs';
+const r=await fetch('https://api.elevenlabs.io/openapi.json'); const data=await r.json();fs.writeFileSync('docs/elevenlabs-schema.json',JSON.stringify(data));
+for(const [k,v] of Object.entries(data.components.schemas)){if(/^(AgentConfig|AgentConfigInput|AgentConfigOverride|AgentConfigOverrideInput|ConversationConfig|ConversationConfigInput|AgentPlatformSettingsRequestModel|PromptAgentInput|PromptAgent|LanguagePreset|LanguagePresetTranslation|RagConfig|Body_Create_agent|Body_Create_knowledge_base_document_from_text|LanguageDetectionToolConfig|LanguageDetectionToolConfigInput)$/.test(k)||k.includes('Create_agent')||k.includes('Create_knowledge_base_document_from_text'))console.log(k,JSON.stringify(v).slice(0,10000));}
