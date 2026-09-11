@@ -1,4 +1,4 @@
-import { SpaExperience } from "@/components/SpaExperience";
+import { MarthaHome } from "@/components/MarthaHome";
 export default function Home() {
-  return <SpaExperience />;
+  return <MarthaHome />;
 }
