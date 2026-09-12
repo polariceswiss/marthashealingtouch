@@ -1484,9 +1484,39 @@ p {
   width: 72px;
   height: 72px;
 }
+.mht-orb {
+  position: fixed;
+  z-index: 71;
+  right: 24px;
+  bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px 6px 7px;
+  border: 1px solid #d8d1ec;
+  border-radius: 999px;
+  background: #fffffff2;
+  box-shadow: 0 10px 30px #4c3f6d24;
+  color: #473b6e;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .03em;
+}
+.mht-orb span {
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 31% 28%, #fff 0 5%, #cfc8ff 19%, #786ee4 45%, #4e458f 76%);
+  box-shadow: inset -7px -8px 14px #30265d75, 0 3px 12px #716bd06b;
+  animation: mht-orb 3.8s ease-in-out infinite;
+}
+.mht-orb i { font-style: normal; }
+@keyframes mht-orb { 50% { transform: scale(1.08); box-shadow: inset -7px -8px 14px #30265d75, 0 0 0 8px #716bd018; } }
 @media (max-width: 760px) {
   .mht-voice { right: 18px; bottom: 18px; transform: none; }
   .mht-voice elevenlabs-convai { width: 66px; height: 66px; }
+  .mht-orb { right: 16px; bottom: 16px; padding-right: 10px; }
+  .mht-orb i { display: none; }
 }
 @media (max-width: 370px) {
   .site-header .brand-logo {

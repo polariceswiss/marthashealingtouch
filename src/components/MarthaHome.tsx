@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ScrollFilm } from "@/components/ScrollFilm";
 import { bookingUrl, contact } from "@/lib/spa";
 
@@ -11,11 +11,12 @@ function Logo() {
 
 function VoiceWidget() {
   const [agentId, setAgentId] = useState<string | null>(null);
+  const widgetHost = useRef<HTMLDivElement>(null);
   useEffect(() => {
     fetch("/api/voice").then((r) => r.json()).then((data) => setAgentId(data.agentId || null)).catch(() => {});
   }, []);
   if (!agentId) return null;
-  return <div className="mht-voice" aria-label="Martha's Healing Touch AI"><div ref={(node) => {
+  return <><button className="mht-orb" aria-label="Talk with Martha's Healing Touch AI" onClick={() => widgetHost.current?.querySelector("elevenlabs-convai")?.dispatchEvent(new MouseEvent("click", { bubbles: true, composed: true }))}><span /><i>Talk with MHT AI</i></button><div className="mht-voice" aria-label="Martha's Healing Touch AI" ref={widgetHost}><div ref={(node) => {
     if (!node || node.firstChild) return;
     const script = document.querySelector("script[data-elevenlabs-convai]");
     if (!script) {
@@ -28,7 +29,7 @@ function VoiceWidget() {
     const widget = document.createElement("elevenlabs-convai");
     widget.setAttribute("agent-id", agentId);
     node.append(widget);
-  }} /></div>;
+  }} /></div></>;
 }
 
 const services = [
