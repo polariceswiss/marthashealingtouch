@@ -1463,6 +1463,31 @@ p {
     font-size: 13px;
   }
 }
+
+/* The ElevenLabs tiny variant needs an explicit host box; otherwise its orb is
+   present in the DOM but has no paint area in some browsers. */
+.mht-voice {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 70;
+  display: block;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+  transform: none;
+}
+.mht-voice elevenlabs-convai {
+  display: block;
+  width: 72px;
+  height: 72px;
+}
+@media (max-width: 760px) {
+  .mht-voice { right: 18px; bottom: 18px; transform: none; }
+  .mht-voice elevenlabs-convai { width: 66px; height: 66px; }
+}
 @media (max-width: 370px) {
   .site-header .brand-logo {
     width: 135px;

@@ -20,7 +20,7 @@ agent.conversation_config.agent.prompt.rag = { enabled: true, max_documents_leng
 agent.conversation_config.language_presets.es.overrides.agent.first_message = "Hola, soy MHT AI. ¿Qué te gustaría explorar hoy?";
 agent.platform_settings.widget = {
   ...agent.platform_settings.widget,
-  variant: "tiny",
+  variant: "compact",
   placement: "bottom-right",
   expandable: "always",
   avatar: { type: "orb", color_1: "#716bd0", color_2: "#dac6a3" },
