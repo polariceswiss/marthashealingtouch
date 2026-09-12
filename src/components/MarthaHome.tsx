@@ -15,7 +15,7 @@ function VoiceWidget() {
     fetch("/api/voice").then((r) => r.json()).then((data) => setAgentId(data.agentId || null)).catch(() => {});
   }, []);
   if (!agentId) return null;
-  return <div className="mht-voice" aria-label="Martha's Healing Touch AI"><span>MHT AI</span><div ref={(node) => {
+  return <div className="mht-voice" aria-label="Martha's Healing Touch AI"><div ref={(node) => {
     if (!node || node.firstChild) return;
     const script = document.querySelector("script[data-elevenlabs-convai]");
     if (!script) {

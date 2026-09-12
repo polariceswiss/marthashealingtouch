@@ -8,7 +8,7 @@
         "workflow_node_id": null,
         "version_id": null
       },
-      "message": "Hi, I'm Clara, Martha's AI wellness concierge. We can chat in English or Spanish. What kind of care are you looking for today?",
+      "message": "Hi, I’m MHT AI. What would you like to explore today?",
       "multivoice_message": null,
       "tool_calls": [],
       "tool_results": [],
@@ -40,7 +40,7 @@
     {
       "role": "user",
       "agent_metadata": null,
-      "message": "Hello.  I'm interested in learning more about your facial treatments.",
+      "message": "Hello MHT AI.  I'd like to inquire about your facial treatments.",
       "multivoice_message": null,
       "tool_calls": [],
       "tool_results": [],
@@ -77,7 +77,7 @@
         "workflow_node_id": null,
         "version_id": null
       },
-      "message": "Hello there!  Martha's Healing Touch offers a variety of facial treatments, including anti-aging care, vitamin C, and hyaluronic acid options. Our team will select the best treatment for you after a consultation.  You can find more details and book an appointment through Booksy.",
+      "message": "Martha's Healing Touch offers various facial treatments, including anti-aging care, vitamin C,  and hyaluronic acid options.  Our team selects the most suitable treatment for you after a consultation.",
       "multivoice_message": null,
       "tool_calls": [],
       "tool_results": [],
@@ -88,13 +88,13 @@
       "conversation_turn_metrics": {
         "metrics": {
           "convai_llm_service_ttf_sentence": {
-            "elapsed_time": 0.719105320982635
+            "elapsed_time": 0.8806315129622817
           },
           "convai_llm_service_ttfb": {
-            "elapsed_time": 0.718676759977825
+            "elapsed_time": 0.8802379829576239
           },
           "convai_llm_service_tt_last_sentence": {
-            "elapsed_time": 0.8726878260495141
+            "elapsed_time": 0.9680133309448138
           }
         },
         "convai_asr_provider": null,
@@ -166,9 +166,9 @@
       "tool_calls": [
         {
           "type": "system",
-          "request_id": "language_detection_b67d4669c4154e4998f327370424573d",
+          "request_id": "language_detection_4b9c1b9c35964abe8e87d70a149ffc77",
           "tool_name": "language_detection",
-          "params_as_json": "{\"reason\": \"User switched to Spanish\", \"language\": \"es\"}",
+          "params_as_json": "{\"reason\": \"User prefers Spanish\", \"language\": \"es\"}",
           "tool_has_been_called": false,
           "tool_details": null
         }
@@ -212,13 +212,13 @@
       "tool_calls": [],
       "tool_results": [
         {
-          "request_id": "language_detection_b67d4669c4154e4998f327370424573d",
+          "request_id": "language_detection_4b9c1b9c35964abe8e87d70a149ffc77",
           "tool_name": "language_detection",
-          "result_value": "{\"result_type\":\"language_detection_success\",\"status\":\"success\",\"reason\":\"User switched to Spanish\",\"language\":\"es\"}",
+          "result_value": "{\"result_type\":\"language_detection_success\",\"status\":\"success\",\"reason\":\"User prefers Spanish\",\"language\":\"es\"}",
           "is_error": false,
           "is_blocked": false,
           "tool_has_been_called": true,
-          "tool_latency_secs": 0.0010920099448412657,
+          "tool_latency_secs": 0.0010580000234767795,
           "error_type": "",
           "raw_error_message": "",
           "dynamic_variable_updates": [],
@@ -226,7 +226,7 @@
           "result": {
             "result_type": "language_detection_success",
             "status": "success",
-            "reason": "User switched to Spanish",
+            "reason": "User prefers Spanish",
             "language": "es"
           }
         }
@@ -264,7 +264,7 @@
         "workflow_node_id": null,
         "version_id": null
       },
-      "message": "¡Claro! Entendido, hablaremos en español. Como soy una asistente de IA, no puedo reservar citas directamente para ti.  Te recomiendo que visites nuestro enlace de Booksy para ver la disponibilidad y reservar tu cita para mañana a las diez de la mañana,  o puedes llamar al spa.",
+      "message": "No puedo reservar citas directamente.  Para confirmar la disponibilidad y los precios actuales,  por favor visita Booksy o llama al spa.",
       "multivoice_message": null,
       "tool_calls": [],
       "tool_results": [],
@@ -275,13 +275,13 @@
       "conversation_turn_metrics": {
         "metrics": {
           "convai_llm_service_ttf_sentence": {
-            "elapsed_time": 3.4462167359888554
+            "elapsed_time": 2.620035508996807
           },
           "convai_llm_service_ttfb": {
-            "elapsed_time": 3.4457229760009795
+            "elapsed_time": 2.6197928990004584
           },
           "convai_llm_service_tt_last_sentence": {
-            "elapsed_time": 3.4940928539726883
+            "elapsed_time": 2.661166378064081
           }
         },
         "convai_asr_provider": null,
@@ -348,7 +348,7 @@
         "workflow_node_id": null,
         "version_id": null
       },
-      "message": "De nada. Me alegra haberte podido ayudar. ¡Que tengas un excelente día!",
+      "message": "De nada.  Que tengas un buen día.",
       "multivoice_message": null,
       "tool_calls": [],
       "tool_results": [],
@@ -359,13 +359,13 @@
       "conversation_turn_metrics": {
         "metrics": {
           "convai_llm_service_ttf_sentence": {
-            "elapsed_time": 0.8317399870138615
+            "elapsed_time": 0.3713126489892602
           },
           "convai_llm_service_ttfb": {
-            "elapsed_time": 0.831363896955736
+            "elapsed_time": 0.3046081009088084
           },
           "convai_llm_service_tt_last_sentence": {
-            "elapsed_time": 0.831734366947785
+            "elapsed_time": 0.382241177954711
           }
         },
         "convai_asr_provider": null,
@@ -400,8 +400,8 @@
     "data_collection_results_list": [],
     "call_successful": "success",
     "call_success_score": null,
-    "transcript_summary": "The user inquired about facial treatments, and the agent provided information on available options and directed them to Booksy for booking. The user then switched to Spanish, requesting an appointment, but the agent clarified that it cannot book directly and advised using Booksy or calling the spa. The user acknowledged this and thanked the agent.",
-    "call_summary_title": "Facial Treatments Booking",
+    "transcript_summary": "The conversation began with the user inquiring about facial treatments offered by Martha's Healing Touch (MHT AI). The agent provided details on available treatments, including anti-aging, vitamin C, and hyaluronic acid options, noting that a consultation precedes treatment selection. The user then switched to Spanish, requesting to book an appointment for the following day at 10 AM. The agent, after detecting the language change, informed the user that it could not directly book appointments and advised them to use Booksy or call the spa for availability and pricing. The user acknowledged and thanked the agent, concluding the interaction.",
+    "call_summary_title": "Facial Treatment Inquiry",
     "scoped": [],
     "sentiment_analysis": null
   },
