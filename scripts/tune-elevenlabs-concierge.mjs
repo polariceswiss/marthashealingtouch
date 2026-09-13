@@ -7,6 +7,7 @@ const headers = { "xi-api-key": env.ELEVENLABS_API_KEY, "Content-Type": "applica
 const get = await fetch(`https://api.elevenlabs.io/v1/convai/agents/${agentId}`, { headers });
 if (!get.ok) throw new Error(`Could not read agent: ${get.status}`);
 const agent = await get.json();
+agent.name = "Martha's Healing Touch AI";
 const prompt = `You are Martha's Healing Touch AI, abbreviated MHT AI. You are a concise bilingual concierge for Martha's Healing Touch, never a clinician or a human employee. Match the visitor's language naturally. Say one useful answer at a time: normally one or two sentences and at most one short question. Never repeat the greeting, the visitor's words, a fact from your immediately previous answer, a Booksy instruction, or a phone number unless the visitor asks again. Do not restate the whole answer after a language change. If the visitor only says thanks, say one warm closing sentence without another question.
 
 Use only the verified knowledge base. You may explain facial care, vitamin C, hyaluronic acid, massage, lymphatic drainage, wood therapy and the consultation-led weight-loss program. Do not diagnose, prescribe, assess suitability, promise results, invent current prices/hours/availability, or imply a booking exists. For a specific appointment time, say briefly that Booksy or the spa team can confirm it. Direct visitors to Booksy only when they ask to book, ask about availability, or need current pricing.
@@ -20,7 +21,7 @@ agent.conversation_config.agent.prompt.rag = { enabled: true, max_documents_leng
 agent.conversation_config.language_presets.es.overrides.agent.first_message = "Hola, soy MHT AI. ¿Qué te gustaría explorar hoy?";
 agent.platform_settings.widget = {
   ...agent.platform_settings.widget,
-  variant: "compact",
+  variant: "full",
   placement: "bottom-right",
   expandable: "always",
   avatar: { type: "orb", color_1: "#716bd0", color_2: "#dac6a3" },
@@ -36,10 +37,32 @@ agent.platform_settings.widget = {
   language_selector: false,
   show_resize_button: false,
   show_conversation_id: false,
-  bg_color: "#fbfafc",
-  btn_color: "#716bd0",
+  bg_color: "#17131e",
+  text_color: "#f8f5ff",
+  btn_color: "#8170e8",
   btn_text_color: "#ffffff",
-  focus_color: "#dac6a3"
+  border_color: "#3a3049",
+  focus_color: "#c8b7ff"
+};
+agent.platform_settings.widget.text_contents = {
+  ...agent.platform_settings.widget.text_contents,
+  main_label: "Your wellness concierge",
+  start_call: "Talk with MHT AI",
+  collapse: "Close",
+  expand: "Open MHT AI"
+};
+agent.platform_settings.widget.styles = {
+  ...agent.platform_settings.widget.styles,
+  base: "#17131e",
+  base_hover: "#231d2c",
+  base_border: "#3a3049",
+  base_subtle: "#c9c0d7",
+  base_primary: "#f8f5ff",
+  accent: "#8170e8",
+  accent_hover: "#6c5bd4",
+  accent_primary: "#ffffff",
+  overlay_padding: 20,
+  button_radius: 18
 };
 const update = await fetch(`https://api.elevenlabs.io/v1/convai/agents/${agentId}`, { method: "PATCH", headers, body: JSON.stringify(agent) });
 if (!update.ok) throw new Error(`Could not update agent: ${update.status} ${await update.text()}`);
