@@ -10,6 +10,7 @@ export const contact = {
   facebook: "https://www.facebook.com/Marthahealingtouchcom/",
   tiktok: "https://www.tiktok.com/@martha.healingtouch",
   maps: "https://www.google.com/maps/search/?api=1&query=2228+N+Flamingo+Road+Suite+127+Pembroke+Pines+FL+33028",
+  uber: "https://m.uber.com/ul/?action=setPickup&dropoff[formatted_address]=Martha%27s%20Healing%20Touch%2C%202228%20N%20Flamingo%20Road%2C%20Suite%20127%2C%20Pembroke%20Pines%2C%20FL%2033028",
 };
 export type Language = "en" | "es";
 export const treatments = [
