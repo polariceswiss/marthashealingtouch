@@ -61,6 +61,11 @@ export const knowledge = [
     text: `Bookings are handled by Booksy: ${bookingUrl}. This assistant cannot see live availability or confirm/cancel appointments. Send the customer to Booksy or the spa phone. Never claim a reservation is made. The original website lists facials starting at $130, but current prices, duration and service availability must be confirmed in Booksy or with the spa. No deposits, discounts or cancellation terms have been verified.`,
   },
   {
+    id: "booksy-pricing",
+    terms: "price cost precio costo discount descuento 699 594 150 127 130 110 booksy",
+    text: "Verified from a supplied current Booksy listing: Weight Loss is 1 hour, regular $699.00 and current listed $594.15. Medical Consultation is 1 hour, regular $150.00 and current listed $127.50. Listed 1-hour body-care services at $110.50 (regular $130.00) include Lymphatic Massage, Post-operative Drainage, Body Contouring, Cellulite Reduction, Healing Deep & Heat Massage, Sports Massage, Deep Tissue Massage, Prenatal Massage, and Neuromuscular Therapy. Listed 1-hour skin-care services at $110.50 (regular $130.00) include Anti-Aging Treatment, Acne Treatment, Deep Cleansing Facial, Dermaplaning, and HydraFacial Treatment. Prices are supplied listing data and may change; always direct the visitor to Booksy to confirm current price and availability. Never promise treatment results or suitability.",
+  },
+  {
     id: "hours",
     terms: "hours open closed time horario abierto cerrado hora lunes monday",
     text: "The official homepage contains conflicting hours: main section Monday 1–6 PM, Tuesday–Friday 10 AM–6 PM, Saturday 9 AM–3 PM, Sunday closed. Footer instead Monday–Friday 9 AM–6 PM, Saturday 9 AM–4 PM. Do not present either as confirmed. Confirm current hours in Booksy or by calling. Timezone America/New_York.",
