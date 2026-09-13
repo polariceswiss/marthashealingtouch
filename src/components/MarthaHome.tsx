@@ -2,11 +2,10 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { ScrollFilm } from "@/components/ScrollFilm";
 import { bookingUrl, contact } from "@/lib/spa";
 
 function Logo() {
-  return <Image src="/images/logo-original.png" alt="Martha's Healing Touch Medical Wellness Center" width={330} height={111} priority />;
+  return <Image src="/images/logomartha.png" alt="Martha's Healing Touch Medical Wellness Center" width={340} height={118} priority />;
 }
 
 function VoiceWidget() {
@@ -16,7 +15,8 @@ function VoiceWidget() {
     fetch("/api/voice").then((r) => r.json()).then((data) => setAgentId(data.agentId || null)).catch(() => {});
   }, []);
   if (!agentId) return null;
-  return <><button className="mht-orb" aria-label="Talk with Martha's Healing Touch AI" onClick={() => widgetHost.current?.querySelector("elevenlabs-convai")?.dispatchEvent(new MouseEvent("click", { bubbles: true, composed: true }))}><span /><i>Talk with MHT AI</i></button><div className="mht-voice" aria-label="Martha's Healing Touch AI" ref={widgetHost}><div ref={(node) => {
+  const openVoice = () => widgetHost.current?.querySelector("elevenlabs-convai")?.shadowRoot?.querySelector<HTMLButtonElement>('button[aria-label^="Talk"]')?.click();
+  return <><button className="mht-orb" aria-label="Talk with Martha's Healing Touch AI" onClick={openVoice}><span /><i>Talk with MHT AI</i></button><div className="mht-voice" aria-label="Martha's Healing Touch AI" ref={widgetHost}><div ref={(node) => {
     if (!node || node.firstChild) return;
     const script = document.querySelector("script[data-elevenlabs-convai]");
     if (!script) {
@@ -55,17 +55,17 @@ export function MarthaHome() {
     <main id="top">
       <section className="mht-hero">
         <div className="mht-hero-sticky">
-          <Image className="mht-hero-poster" src="/images/hero-consultation-v2.png" alt="Wellness consultation at Martha's Healing Touch" fill priority sizes="100vw" />
-          <ScrollFilm />
+          <div className="mht-hero-scene mht-hero-scene-one"><Image src="/images/masaje2.png" alt="Personalized body treatment at Martha's Healing Touch" fill priority sizes="100vw" /></div>
+          <div className="mht-hero-scene mht-hero-scene-two"><Image src="/images/masaje6.png" alt="Wood therapy in progress at Martha's Healing Touch" fill priority sizes="100vw" /></div>
           <div className="mht-hero-wash" />
           <div className="mht-hero-copy mht-copy-one">
-            <p>{en ? "WELCOME TO OUR" : "BIENVENIDA A"}</p><h1>{en ? <>Beauty <i>&amp;</i> health</> : <>Belleza <i>&amp;</i> bienestar</>}</h1>
-            <span>{en ? "Care that listens first, then feels personal." : "Cuidado que primero escucha y luego se vuelve personal."}</span>
+            <p>{en ? "MARTHA'S HEALING TOUCH" : "MARTHA'S HEALING TOUCH"}</p><h1>{en ? <>Wellness,<br /><i>in your rhythm.</i></> : <>Bienestar,<br /><i>a tu ritmo.</i></>}</h1>
+            <span>{en ? "A considered space for body treatments, facial care, massage and personalized weight-loss support." : "Un espacio pensado para tratamientos corporales, cuidado facial, masajes y apoyo personalizado de peso."}</span>
             <a href={bookingUrl} target="_blank" rel="noreferrer">{en ? "MAKE AN APPOINTMENT" : "RESERVAR UNA CITA"} <b>↗</b></a>
           </div>
           <div className="mht-hero-copy mht-copy-two">
-            <p>{en ? "A CALMER WAY FORWARD" : "UNA FORMA MÁS SERENA DE AVANZAR"}</p><h2>{en ? <>Your care,<br /><i>in good hands.</i></> : <>Tu cuidado,<br /><i>en buenas manos.</i></>}</h2>
-            <span>{en ? "Facial care, body treatments, massage and a personalized weight-loss program." : "Cuidado facial, tratamientos corporales, masajes y un programa de peso personalizado."}</span>
+            <p>{en ? "THE BODY RITUAL" : "EL RITUAL CORPORAL"}</p><h2>{en ? <>Expert touch.<br /><i>Quiet confidence.</i></> : <>Manos expertas.<br /><i>Confianza serena.</i></>}</h2>
+            <span>{en ? "Explore lymphatic drainage, wood therapy and massage in a calm, private setting." : "Explora drenaje linfático, maderoterapia y masaje en un ambiente tranquilo y privado."}</span>
           </div>
           <div className="mht-hero-index"><span>01</span><i /><span>02</span><b>{en ? "SCROLL TO EXPLORE" : "DESLIZA PARA EXPLORAR"}</b></div>
         </div>
